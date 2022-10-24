@@ -1,8 +1,11 @@
 package com.example.crud_app.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.crud_app.help.DbHelper;
 
@@ -30,7 +33,20 @@ public class ProdutoDao {
     }
 
     public boolean insert(){
-        return false;
+
+        ContentValues values = new ContentValues();
+
+        values.put("nome", nome);
+        values.put("descricao", descricao);
+        values.put("valor", valor);
+
+        try{
+            database.insert("produto", null, values);
+            return true;
+        }catch (SQLException e){
+            Log.e("DB_LOG", "Produto_Dao: " + e.getLocalizedMessage());
+            return false;
+        }
     }
 
     public Cursor select(){
@@ -51,8 +67,14 @@ public class ProdutoDao {
         return true;
     }
 
-    public boolean select_all(){
-        return false;
+    public Cursor select_all(){
+        String sql_select = "SELECT 'id' as '_id', nome, descricao, valor FROM produto;";
+        Cursor lista = database.rawQuery(sql_select, null);
+
+        if (lista != null){
+            lista.moveToFirst();
+        }
+        return lista;
     }
 
     public Integer getId() {
