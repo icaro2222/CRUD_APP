@@ -8,23 +8,23 @@
 
     <TextView
         android:id="@+id/text_id"
-        android:layout_width="48dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_nome"
-        android:layout_width="79dp"
-        android:layout_height="33dp"
+        android:layout_width="60dp"
+        android:layout_height="34dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
         android:layout_toEndOf="@+id/text_id"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,13 +32,13 @@
 
     <TextView
         android:id="@+id/text_descricao"
-        android:layout_width="127dp"
-        android:layout_height="41dp"
+        android:layout_width="60dp"
+        android:layout_height="34dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
         android:layout_toEndOf="@+id/text_valor"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +49,11 @@
         android:layout_width="76dp"
         android:layout_height="34dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="83dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
         android:layout_toEndOf="@+id/text_nome"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </RelativeLayout>

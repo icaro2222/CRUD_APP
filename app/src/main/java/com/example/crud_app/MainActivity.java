@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -43,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
         listViewProduto.setAdapter(adapter);
 //        listViewProduto.setOnClickListener(new AdapterView.OnItemClickListener());
 
+//        listViewProduto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Editar.class);
+//                startActivity(intent);
+//            }
+//        });
+
+        listViewProduto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, Editar.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
